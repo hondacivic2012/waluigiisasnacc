@@ -6,8 +6,6 @@ screen=display.set_mode((600,600))
 running=True
 #levels=[level1(),level2(),level3(),level4(),level5()]
 
-buttonx=[]
-buttony=[]
 font.init()
 myfont=font.SysFont('Comic Sans MS', 30)
 
