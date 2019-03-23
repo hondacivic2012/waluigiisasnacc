@@ -7,15 +7,16 @@ running=True
 #levels=[level1(),level2(),level3(),level4(),level5()]
 
 font.init()
-myfont=font.SysFont('Comic Sans MS', 30)
-
 while running == True:
     for evt in event.get():
         if evt.type == QUIT:
             running = False
-
+    screen.fill((200,0,200))
+    myfont=font.SysFont('Comic Sans MS', 50)
     textsurface = myfont.render('Pick a Level',False,(225,255,255))
-    screen.blit(textsurface,(225,50))
+    screen.blit(textsurface,(190,0))
+
+    myfont=font.SysFont('Comic Sans MS', 30)
 
     mousedown=mouse.get_pressed()[0]
     mousex=mouse.get_pos()[0]
