@@ -71,6 +71,7 @@ while running == True:
         if evt.type == QUIT:
             running = False
     
+        levelselect()
 
     display.flip()
 quit()
