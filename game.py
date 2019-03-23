@@ -76,8 +76,14 @@ def levelselect():
 
 selected=False
 
+speed = 1
+
+playerx = 275
+playery = 400
+
 font.init()
 while running == True:
+    screen.fill((0,0,0))
     for evt in event.get():
         if evt.type == QUIT:
             running = False
@@ -87,10 +93,23 @@ while running == True:
                     selected=False
                 else:
                     selected=True
+                    
+    keys = key.get_pressed()
+
+    if keys[K_LEFT]:
+        playerx -= speed
+    if keys[K_RIGHT]:
+        playerx += speed
+    if keys[K_UP]:
+        playery -= speed
+    if keys[K_DOWN]:
+        playery += speed
+
     if selected:            
         levelselect()
     else:
-        screen.fill((0,0,0))
+        playerrect = Rect((playerx,playery,25,25))
+        draw.rect(screen, (255,0,0), playerrect)
 
     display.flip()
 quit()
